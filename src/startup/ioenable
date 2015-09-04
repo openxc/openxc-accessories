@@ -1,0 +1,55 @@
+#!/bin/bash
+# $Rev: 349 $
+
+echo 1   > /sys/class/gpio/export    # BT_EN
+echo out > /sys/class/gpio/pioA1/direction
+echo 1   > /sys/class/gpio/pioA1/value
+echo "BT Enabled"
+#echo 2   > /sys/class/gpio/export   # WLAN_EN
+#echo out > /sys/class/gpio/pioA2/direction
+#echo 1   > /sys/class/gpio/pioA2/value
+#echo "WiFi Enabled"
+#echo 159   > /sys/class/gpio/export
+#echo "RST_BTN Enabled"
+
+echo 8 > /sys/class/gpio/export      # USB_ID
+echo 14 > /sys/class/gpio/export     # USB_VBUS_ON
+echo 12 > /sys/class/gpio/export     # P12_DET
+
+if [ -e /root/OpenXCAccessory/common/.xcmodem_boardid ]; then
+  id=`cat /root/OpenXCAccessory/common/.xcmodem_boardid`
+  if [ "$id" -eq "1" ]; then 
+    echo "Charger Config"
+    /root/OpenXCAccessory/startup/charger_config.py
+  elif [ "$id" -eq "2" ]; then
+    echo "Charger Config"
+    /root/OpenXCAccessory/startup/charger_config_v2x.py
+
+    echo 6   > /sys/class/gpio/export    # R2_PERST#
+    echo out > /sys/class/gpio/pioA6/direction
+    echo 0   > /sys/class/gpio/pioA6/value
+    echo "MK5 Enabled"
+    /root/OpenXCAccessory/startup/dfu_download
+  fi
+fi
+
+# assume that vi usb has been connected before booting up,
+# determine if it has external power
+viusb="/tmp/viusb"
+if [ ! -e $viusb ]; then
+  lsusb | grep "1bc4:0001"
+  if [ "$?" -eq 0 ]; then
+    echo 1 > $viusb
+  else
+    echo 0 > $viusb
+  fi
+fi
+
+# invoke USB OTG
+/root/OpenXCAccessory/startup/usbotg.sh &
+
+# in-case vi usb doesn't have external power
+# then wait for modem to provide the power and usb initialization completion
+if [ "$(cat $viusb)" = 0 ]; then
+  sleep 10
+fi
