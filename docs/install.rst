@@ -29,7 +29,7 @@ will be used to automatically configure the connection settings.
 
 .. note:: 
  Using OpenXC Modem Connect is suggested for easier and faster access to the Modem, 
- although you may choose to manually configure TeraTerm to configure the modem. 
+ although you may choose to manually configure TeraTerm to connect to the modem. 
 
 Download OpenXC Modem Connect `here <https://github.com/openxc/openxc-accessories/blob/master/tools/ModemConnect/ModemConnect-v1.0.0.143.msi>`_. Detailed instructions are available `here <https://github.com/openxc/openxc-accessories/blob/master/tools/ModemConnect/Documents/OpenXC%20Modem%20Connect%20App%20Installation%20Procedure.docx>`_.
 

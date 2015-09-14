@@ -14,7 +14,7 @@ OpenXC Accessories
 :Documentation: http://accessories.openxcplatform.com
 :Source: http://github.com/openxc/openxc-accessories
 
-The OpenXC Accessores are a line of hardware accessories intended to augment the 
+The OpenXC Accessories are a line of hardware accessories intended to augment the 
 `Vehicle Interface (VI) <http://openxcplatform.com/vehicle-interface/hardware.html>`_
 and communicate with other entities. The benefit of the Accessory Platform is that 
 all accessories share a common base (or motherboard) and new features are added by
@@ -22,7 +22,7 @@ modifying or designing a new daughter card (mPCIe connector).
 
 The base board contains an Atmel SAMA5 (Cortex-A5) running embedded Linux. All
 accessory functions are coded in Python. Interfaces include SD card slot, Bluetooth 
-Clasic, Bluetooth Low Energy (a.k.a Bluetooth Smart), USB OTG. WiFi is currently being
+Classic, Bluetooth Low Energy (a.k.a Bluetooth Smart), USB OTG. WiFi is currently being
 enabled. A debug serial port is available.
 
 The first in the line of accessories is a 3G Modem to enable sharing of vehicle 
@@ -38,7 +38,7 @@ Table of Contents
    getting-started
    configuration
    design-sources
-
+   license-disclosure
 
 
 License
