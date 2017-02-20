@@ -30,13 +30,13 @@ Cohda Setup
 The "Cohda_setup.sh" script performs the following functions for the setting the Cohda environment and the necessary IP setup for the
 802.11p based network.
 
-* Enable Cohda HW
-* Download Firmware
-* Install llc kernel object with TCP/IP and UDP/IP support
-* Bring up Cohda interface and assign IP address
-* Create IP neighborhood for other Cohda devices (this is a pre-assigned network configuration)
+* Enable Cohda HW.
+* Download Firmware.
+* Install llc kernel object with TCP/IP and UDP/IP support.
+* Bring up Cohda interface and assign IP address.
+* Create IP neighborhood for other Cohda devices (this is a pre-assigned network configuration).
 
-  * Each Cohda device is assigned a unique 10.0.0.XX address and a unique MAC address based on the last four characters of the Bluetooth MAC address, found through a lookup table in the script
-  * All the Cohda devices in the supplied population (50 units) are added to the current device neighborhood
+  * Each Cohda device is assigned a unique 10.0.0.XX address and a unique MAC address based on the last four characters of the Bluetooth MAC address, found through a lookup table in the script.
+  * All the Cohda devices in the supplied population (50 units) are added to the current device neighborhood.
   
   
