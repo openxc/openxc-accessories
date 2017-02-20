@@ -31,15 +31,15 @@ Upgrade Procedure
 * Power V2X device On.
 * Stop “autoboot” by pressing any key on your keyboard.
 
-.. image:: https://github.com/openxc/openxc-accessories/blob/master/docs/pictures/Figure%20A.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%20A.PNG
 
 * Type “nand erase.chip” and hit Enter.
 
-.. image:: https://github.com/openxc/openxc-accessories/blob/master/docs/pictures/Figure%20B.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%20B.PNG
 
 * Type “reset” and hit Enter.
 
-.. image:: https://github.com/openxc/openxc-accessories/blob/master/docs/pictures/Figure%20C.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%20C.PNG
 
 * The Device Manager should have registered a new device under Ports (COM & LPT) named “AT91 USB to Serial Converter”.
 
@@ -47,7 +47,7 @@ Upgrade Procedure
 
 .. TODO double check the file name and location
 
-.. image:: https://github.com/openxc/openxc-accessories/blob/master/docs/pictures/Figure%20D.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%20D.PNG
 
 * Install executable file “sam-ba_2.15.exe”.
 
@@ -69,7 +69,7 @@ Upgrade Procedure
 
     * Terminal 1 will stop scrolling and Terminal 2 will automatically close. 
     
-.. image:: https://github.com/openxc/openxc-accessories/blob/master/docs/pictures/Figure%20E.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%20E.PNG
 
 Congratulations, you have successfully upgraded the V2X kernel.
 
