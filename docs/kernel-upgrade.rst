@@ -65,7 +65,7 @@ Upgrade Procedure
     
 .. TODO double check the file name and location
     
-* Power V2X device Off then back On after the Kernel finishes falshing to nandflash.
+* Power V2X device Off then back On after the Kernel finishes flashing to nandflash.
 
     * Terminal 1 will stop scrolling and Terminal 2 will automatically close. 
     
