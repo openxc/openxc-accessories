@@ -36,6 +36,7 @@ Table of Contents
    :maxdepth: 2
 
    getting-started
+   system-overview
    configuration
    design-sources
    license-disclosure
