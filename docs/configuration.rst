@@ -2,51 +2,47 @@
 Configuration
 =============
 
-General Overview
+Configuration File
 -------
 
 The following section describes the high level software design for the OpenXC-Modem and V2X devices.  The picture below shows the communication links between devices.
 
+
+
+
+* /root/OpenXCAccessory/common
+
+.. csv-table::
+   :header: "Option Name", "Unit", "Default Value", "Description"
+   :widths: 30, 20, 20, 40
+   
+   "openxc_vi_mac", "XX:XX:XX:XX:XX:XX", "None", "Vehicle Interface Dongle MAC"
+   
+   
+   
+   
+   
+   
+   
+
+   "xcmodem_topology", "File to specify the config mode/topology
+   
+      (1) Topology 1
+      (2) Topology 2
+      (3) Topology 3
+      "
+   "xc_led.py", "LED unit test"
+   "xc_ser.py", "Serial Terminal Emulator
+   
+    Usage: xcmodem_ser.py [-h] dev
+      where dev: Serial Device"
+   "xc_cmd.py", "OpenXC-Modem application command handler and unit test"
+
+
+
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%201.PNG
 
-The OpenXC Embedded Software initiates connections shown in Figure 1.
-The devices (VI, V2X, Modem, Phone, RSU, AP and Cloud) can be configured as follows:
-
-* Mode 1: VI + Modem + Phone + Cloud
-* Mode 2: VI + V2X + RSU + Phone + Cloud
-* Mode 3: VI + V2X + RSU + Phone + Cloud
-
-The connections that are supported in these modes are shown below. 
-
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%202.PNG
-
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%203.PNG
-
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%204.PNG
-
-Application Overview
--------
-
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%206.PNG
-
-The Modem, V2X and RSU devices are designed as communication sources connecting through sockets and queues. 
-
-Tasks are handled in separate threads to handle concurrent activities and exchange data safely.  The threads are designed to be stoppable, using the following techniques as applicable:
-
-* System exception to detect connection errors, or connection termination.
-* Timeout exception to detect lost connection, especially in receiving/listening thread.
-* External control flag to terminate execution loop.
-
-The exchange of data from the sources to apps can be enabled or disable based on the configuration parameters described in the next section. The devices are connected through either Bluetooth, WIFi or 802.11p as shown in Figure 1.
-
-* The Bluetooth interface uses 2 independent RFCOMM socket (Send & Recv) threads and associated data buffer queues.
-* The WiFi interface uses 2 independent INET socket (Send & Recv) threads and associated data buffer queues.
-* The 802.11p interface uses 2 independent UDP broadcast socket (UdpSend & UdpRecv) threads and associated data buffer queues.
-
-
-Modem Overview
--------
-
+.. note::  1 - Not covered in this document
 
 
 
