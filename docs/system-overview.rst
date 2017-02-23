@@ -47,6 +47,46 @@ The exchange of data from the sources to apps can be enabled or disable based on
 Modem Overview
 -------
 
+* Source: VI
 
+  * VI through Bluetooth socket
 
+*Applications
 
+  * VI stream recording
+  * GSM "Network Server Upload" task is handled in a separate stoppable thread
+  * GPS "Acquire Current Position" task is handled in a separate stoppable thread
+  * Environmental Monitor tasks (Battery level, Charger status, FW reset button …) are handled in separate stoppable threads.
+  * Mobile App Thread
+  * V2X connection thread (Topology 3)
+
+V2X Overview
+-------
+
+* Sources:
+
+  * VI through Bluetooth socket (Topology 2)
+  * VI through modem over WiFI (Topology 3)
+  * RSU through UDP broadcast over 802.11p
+  * Self-identification announcement via UDP broadcast over 802.11p
+
+* Applications
+
+  * VI stream recording
+  * RSU stream recording
+  * Environmental Monitor tasks (Battery level, Charger status, FW reset button …) are handled in separate stoppable threads.
+  * Mobile App Thread (Topology 2)
+  * VI data upload
+  * RSU data upload
+
+RSU Overview
+-------
+
+* Source:
+
+  * Garage Simulator, sends garage data through UDP broadcast over 802.11p
+
+* Application
+
+  * RSU data recording. Collects vehicle announcement and VI data if enabled)
+  
