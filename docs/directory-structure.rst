@@ -50,10 +50,14 @@ A flat directory structure is used.
    "xc_cmd.py", "OpenXC-Modem application command handler and unit test"
    "xc_app.py", "OpenXC-Modem application (Mobile / PC) agent and unit test"
    "xc_vi.py", "OpenXC-Modem Vehicle Interface agent and unit test"
-   "xcmodem.sh", "OpenXC-Modem auto start script, used during board startup"
+   "xcmodem.conf.web", "OpenXC-Modem auto start script, used during board startup"
    "xc.conf", "Local user variable options configuration file. This file is common to Modem, V2X and RSU"
    "xc_rsu_common.py", "File for RSU functions that are common to V2X and RSU"
    "ota_upgrade.py", "File for OTA upgrade functions"
+   "xc_ver.py", "PpenXC-Modem version"
+   "xc_scp.pem", "RSA Private Key"
+   "xc.common.py", "OpenXC-Modem common functions"
+   "cleanup.py", "RSU cleanup"
    
 * /root/OpenXCAccessory/modem: (applicable for OpenXC Modem Accessory only)
 
