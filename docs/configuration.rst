@@ -11,7 +11,7 @@ The following section describes the high level software design for the OpenXC-Mo
 
 .. csv-table::
    :header: "Option Name", "Unit", "Default Value", "Description"
-   :widths: 30, 20, 20, 40
+   :widths: 20, 20, 20, 30
    
    "openxc_vi_mac", "XX:XX:XX:XX:XX:XX", "None", "Vehicle Interface Dongle MAC"
    "openxc_vi_enable", "boolean (0 .. 1)", "1/0 for MODEM/V2X", "Enabling Vehicle Interface communication"
@@ -64,7 +64,9 @@ The following section describes the high level software design for the OpenXC-Mo
    "chd_radio", "(‘a’..’b’)", "a", "Radio to be used for the Cohda module"
    "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
    "chd_chan_no", "10 MHz channel (172, 174, 176, 180, 182, 184)  or 20MHz channel (175, 181). All channels are SCH", "184", "802.11p Channel"
-   "chd_modulation", "MK2MCS_R12BPSK, 
+   "chd_modulation", "
+   
+   MK2MCS_R12BPSK, 
    MK2MCS_R34BPSK, 
    MK2MCS_R12QPSK, 
    MK2MCS_R34QPSK, 
