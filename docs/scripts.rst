@@ -4,6 +4,18 @@ Scripts
 
 The Configuration scripts are used to setup the environment for the application. These scripts are stored in ~/OpenXCAccessory/startup directory.
 
+* openxc_init
+
+ * Set the config files, Set boardid file contents, set topology, set .pem files found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_.
+
+* openxc_load_config
+
+ * Load /restore config files found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_.
+
+* openxc_save_config
+
+ * Save backup of current configuration found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_.
+
 WiFi Setup
 --------
 
