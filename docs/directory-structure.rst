@@ -95,7 +95,7 @@ A flat directory structure is used.
    "xc.conf.cur", "All options value currently in effect"
    "xc_v2x.py", "V2X-MODEM MD client agent and unit test"
    
-   * /root/OpenXCAccessory/etc: 
+* /root/OpenXCAccessory/etc: 
    
 .. csv-table::
    :header: "File Name", "Description"
