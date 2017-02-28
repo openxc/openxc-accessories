@@ -145,12 +145,15 @@ The Modem has 5 LED indicator lights. Battery LED has 2 colors (RED and GREEN) w
    "GSM_led", "OFF | ON | FAST BLINK | SLOW BLINK", "IDLE or PPP lost | GSM is ready | PPP data transferring | SIM not inserted", "gsm_app", "IDLE / LOST | PENDING | OPERATION | PENDING"
    "GPS_led*", "OFF | ON | FAST BLINK | SLOW BLINK", "Not start | GPS Unit power up | Valid GPSAPC | Locking for valid GPSAPC", "gps_app", "IDLE | CONNECT | OPERATION | LOCKING"
    "BT_led", "OFF | ON | FAST BLINK | SLOW BLINK", "IDLE | VI Dongle Connect | VI Dongle Pairing | VI Dongle Discovery", "vi_app", "IDLE / LOST | OPERATION | DISCOVERED | ADDR_INQUIRY/ADDR_ASSIGNED/DISCOVERED"
-   "WiFi_led", "OFF | ON | FAST BLINK | SLOW BLINK", "Not Connected | Connected | Data Transmitting | Device N/A", "na", "IDLE | PENDING | OPERATION | NO WIFI DEVICE DETECTED***"
+   "Wifi_led**", "OFF | ON | FAST BLINK | SLOW BLINK", "Not Connected | Connected | Data Transmitting | Device N/A", "na", "IDLE | PENDING | OPERATION | NO WIFI DEVICE DETECTED***"
    "80211_led", "OFF | FAST BLINK", "Not Connected | Data Transmittin", "na", "IDLE | OPERATION"
+ 
+.. note:: 
+    .* V2X and RSU use “gps” as “wifi” led.
    
-* V2X and RSU use “gps” as “wifi” led.
-** V2X and RSU use “wifi” led for 802.11p led.
-*** TI WiFi module occasionally doesn’t come up during boot-up and may need manual power cycle.
+    .** V2X and RSU use “wifi” led for 802.11p led.
+   
+    .*** TI WiFi module occasionally doesn’t come up during boot-up and may need manual power cycle.
 
 
 Brightness Control
