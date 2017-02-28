@@ -31,12 +31,10 @@ The following section describes the high level software design for the OpenXC-Mo
    
       (<IP>:[<directory>/]<filename>)
       (3)"
-      
    "web_scp_vi_target_url", "", "ip:file", "Remote server target file URL in this format
    
       (<IP>:[<directory>/]<filename>)
       (4)"
-      
    "web_scp_target_overwrite_enable", "boolean (0 .. 1)", "1", "Enabling to overwrite remote server target file (5)"
    "web_scp_vi_trace_upload_enable", "boolean (0 .. 1)", "0", "Enabling vehicle data records to be uploaded into remote server"
    "web_scp_vi_trace_upload_interval", "seconds", "3600", "Interval to upload vehicle data stream into a remote server (6)"
@@ -44,11 +42,9 @@ The following section describes the high level software design for the OpenXC-Mo
    
       (<IP>:[<directory>/]<filename>)
       where None means Auto Upgrade is disable"
-      
    "v2x_lan_scp_sw_latest_version_url", "", "20.0.0.1:/tmp/upgrade.ver", "Auto upgrade version URL 
    
       (<IP>:[<directory>/]<filename>)"
-      
    "fw_factory_reset_enable", "boolean (0 .. 1)", "1", "Enabling Firmware Factory Reset Button support"
    "power_saving_mode", "", "Normal", "Power saving profile where value is (performance / normal / saving)"
    "led_brightness", "", "128", "LED brightness level where level is (0 .. 255) (7)"
@@ -68,7 +64,16 @@ The following section describes the high level software design for the OpenXC-Mo
    "chd_radio", "(‘a’..’b’)", "a", "Radio to be used for the Cohda module"
    "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
    "chd_chan_no", "10 MHz channel (172, 174, 176, 180, 182, 184)  or 20MHz channel (175, 181). All channels are SCH", "184", "802.11p Channel"
-   "chd_modulation", "MK2MCS_R12BPSK MK2MCS_R34BPSK MK2MCS_R12QPSK MK2MCS_R34QPSK MK2MCS_R12QAM16 MK2MCS_R34QAM16 MK2MCS_R23QAM64  MK2MCS_R34QAM64 MK2MCS_DEFAULT MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
+   "chd_modulation", "MK2MCS_R12BPSK, 
+   MK2MCS_R34BPSK, 
+   MK2MCS_R12QPSK, 
+   MK2MCS_R34QPSK, 
+   MK2MCS_R12QAM16, 
+   MK2MCS_R34QAM16, 
+   MK2MCS_R23QAM64,  
+   MK2MCS_R34QAM64, 
+   MK2MCS_DEFAULT, 
+   MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
    "chd_ch_update_enable", "Boolean(0..1)", "0", "Flag to update the cohda channel parameters from the config parameters during the application run"
    
 * For optimal RSU trace recording in topology 3, trace time interval should be set as 1:2:1 ratio. Default value is 20:40:20. Where:
