@@ -16,6 +16,7 @@ A flat directory structure is used.
    "common", "Common Software for OpenXC-Modem/OpenXC-V2X"
    "modem", "Modem specific software"
    "backup", "Place holder for Firmware Factory Reset and current software versions. Also has backup of configuration files such as WiFi, xc.conf, boardid, and topology"
+   "etc", "wpa configuration files for modem, V2X, and RSU"
    "V2X", "V2X specific Software (1)"
    "rsu", "RSU specific Software"
    
@@ -93,6 +94,18 @@ A flat directory structure is used.
    "xc_scp.pem", "PEM key file to access AWS"
    "xc.conf.cur", "All options value currently in effect"
    "xc_v2x.py", "V2X-MODEM MD client agent and unit test"
+   
+   * /root/OpenXCAccessory/etc: 
+   
+.. csv-table::
+   :header: "File Name", "Description"
+   :widths: 20, 60
+
+   "create_symlinks.sh", "Remove and replace exisiting .etc files with 
+   "wpa_supplicant_modem.conf", "Overwrite modem configuration file whenever changed"
+   "wpa_supplicant_rsu.conf", "Overwrite RSU configuration file whenever changed"
+   "wpa_supplicant_v2x.conf", "Overwrite V2X configuration file whenever changed"
+   "wpa_supplicant_v2x_top2.conf", "Overwrite V2X configuration file whenever changed in Topology 2"
    
 * RSU: (applicable for OpenXC V2X Accessory only)
    
