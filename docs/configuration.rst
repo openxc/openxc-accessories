@@ -17,27 +17,67 @@ The following section describes the high level software design for the OpenXC-Mo
    :widths: 30, 20, 20, 40
    
    "openxc_vi_mac", "XX:XX:XX:XX:XX:XX", "None", "Vehicle Interface Dongle MAC"
+   "openxc_vi_enable", "boolean (0 .. 1)", "1/0 for MODEM/V2X", "Enabling Vehicle Interface communication"
+   "openxc_md_enable", "boolean (0 .. 1)", "1/0 for MODEM/V2X", "Enabling V2X-MD Interface communication (10)"
+   "openxc_vi_trace_snapshot_duration", "seconds", "10", "Vehicle data stream trace recording snapshot duration"
+   "openxc_vi_trace_idle_duration", "seconds", "110", "Idle duration between subsequent Vehicle data trace recording snapshot"
+   "openxc_vi_trace_truncate_size", "bytes", "0", "Vehicle data trace snapshot truncate size where 0 means no truncate"
+   "openxc_vi_trace_filter_script", "", "None", "Vehicle data trace filtering executable script where the script is required to accept stdin input stream and generate stdout output (1)"
+   "openxc_vi_trace_number_of_backup", "integer", "0", "Number of vehicle data trace will be backed up in provided micro SD card (2)  where O means no back up is needed"
+   "openxc_vi_trace_backup_overwrite_enable", "boolean (0 .. 1)", "1", "Enabling to overwrite backup files when the SD disk is full"
+   "web_scp_userid", "", "anonymous", "Remote server scp userid"
+   "v2x_lan_scp_userid", "", "root", "Remote server(Modem) scp userid for V2X in Topology 3"
+   "web_scp_pem", "", "None Remote server SSL Enscripted Private key PEM"
+   "web_scp_apn", "", "apn", "Remote server Access Point Name as per details provided with the SIM card contract"
+   "web_scp_config_download_enable", "boolean (0 .. 1)", "0", "Enabling congifuration file download from remote server"
+   "web_scp_config_url", "", "ip:file", "Configuration file URL on the remote server 
+   
+      (<IP>:[<directory>/]<filename>)
+      (3)"
+      
+   "web_scp_vi_target_url", "", "ip:file", "Remote server target file URL in this format
+   
+      (<IP>:[<directory>/]<filename>)
+      (4)"
+      
+   "web_scp_target_overwrite_enable", "boolean (0 .. 1)", "1", "Enabling to overwrite remote server target file (5)"
+   "web_scp_vi_trace_upload_enable", "boolean (0 .. 1)", "0", "Enabling vehicle data records to be uploaded into remote server"
+   "web_scp_vi_trace_upload_interval", "seconds", "3600", "Interval to upload vehicle data stream into a remote server (6)"
+   "web_scp_sw_latest_version_url", "",  "None", "Auto upgrade version URL
+   
+      (<IP>:[<directory>/]<filename>)
+      where None means Auto Upgrade is disable"
+      
+   "v2x_lan_scp_sw_latest_version_url", "", "20.0.0.1:/tmp/upgrade.ver", "Auto upgrade version URL 
+   
+      (<IP>:[<directory>/]<filename>)"
+      
+   "fw_factory_reset_enable", "boolean (0 .. 1)", "1", "Enabling Firmware Factory Reset Button support"
+   "power_saving_mode", "", "Normal", "Power saving profile where value is (performance / normal / saving)"
+   "led_brightness", "", "128", "LED brightness level where level is (0 .. 255) (7)"
+   "gps_log_interval", "seconds", "10", "Interval to log GPS Acquire Current Position into /var/log/xcmodem.gps if applicable"
+   "gps_enable", "boolean (0 .. 1)", "1/0", "for MODEM/V2X Enabling GPS module (8)"
+   "gsm_enable", "boolean (0 .. 1)", "1/0", "for MODEM/V2X Enabling GSM module (9)"
+   "openxc_v2x_trace_snapshot_duration*", "seconds", "", "RSU data stream trace recording snapshot duration for topology 3."
+   "openxc_v2x_trace_idle_duration*", "seconds", "", "Idle duration between subsequent RSU data trace recording snapshot for topology 3"
+   "xcmodem_ip_addr", "IP address", "20.0.0.1", "IP address for the Modem when it acts as an AP"
+   "openxc_xcV2Xrsu_trace_snapshot_duration", "seconds", "", "Duration control for RSU snapshot in V2X and RSU"
+   "openxc_xcV2Xrsu_trace_idle_duration", "seconds", "", "Interval control between RSU snapshots"
+   "web_scp_xcV2Xrsu_target_url", "URL", "", "URL for uploading RSU logs"
+   "web_scp_rxcV2Xsu_trace_upload_interval", "seconds", "", "Interval control between successive web uploads"
+   "web_scp_xcV2Xrsu_trace_upload_enable", "seconds", "", "Enable/Disable control for web upload of RSU log"
+   "openxc_xcV2Xrsu_msg_send_interval*", "seconds", "", "Control for interval between RSU identification message broadcast"
+   "chd_txpower", "", "2 dBm", "Transmit power for cohda radio" 
+   "chd_radio", "(‘a’..’b’)", "a", "Radio to be used for the Cohda module"
+   "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
+   "chd_chan_no", "10 MHz channel (172, 174, 176, 180, 182, 184)  or 20MHz channel (175, 181). All channels are SCH", "184", "802.11p Channel"
+   "chd_modulation", "MK2MCS_R12BPSK | MK2MCS_R34BPSK | MK2MCS_R12QPSK | MK2MCS_R34QPSK | MK2MCS_R12QAM16 | MK2MCS_R34QAM16 | MK2MCS_R23QAM64  | MK2MCS_R34QAM64 | MK2MCS_DEFAULT | MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
+   "chd_ch_update_enable", "Boolean(0..1)", "0", "Flag to update the cohda channel parameters from the config parameters during the application run"
    
    
    
    
    
-   
-   
-
-   "xcmodem_topology", "File to specify the config mode/topology
-   
-      (1) Topology 1
-      (2) Topology 2
-      (3) Topology 3
-      "
-   "xc_led.py", "LED unit test"
-   "xc_ser.py", "Serial Terminal Emulator
-   
-    Usage: xcmodem_ser.py [-h] dev
-      where dev: Serial Device"
-   "xc_cmd.py", "OpenXC-Modem application command handler and unit test"
-
 
 
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%201.PNG
