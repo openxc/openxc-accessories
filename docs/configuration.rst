@@ -7,9 +7,6 @@ Configuration File
 
 The following section describes the high level software design for the OpenXC-Modem and V2X devices.  The picture below shows the communication links between devices.
 
-
-
-
 * /root/OpenXCAccessory/common
 
 .. csv-table::
@@ -71,18 +68,59 @@ The following section describes the high level software design for the OpenXC-Mo
    "chd_radio", "(‘a’..’b’)", "a", "Radio to be used for the Cohda module"
    "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
    "chd_chan_no", "10 MHz channel (172, 174, 176, 180, 182, 184)  or 20MHz channel (175, 181). All channels are SCH", "184", "802.11p Channel"
-   "chd_modulation", "MK2MCS_R12BPSK | MK2MCS_R34BPSK | MK2MCS_R12QPSK | MK2MCS_R34QPSK | MK2MCS_R12QAM16 | MK2MCS_R34QAM16 | MK2MCS_R23QAM64  | MK2MCS_R34QAM64 | MK2MCS_DEFAULT | MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
+   "chd_modulation", "MK2MCS_R12BPSK MK2MCS_R34BPSK MK2MCS_R12QPSK MK2MCS_R34QPSK MK2MCS_R12QAM16 MK2MCS_R34QAM16 MK2MCS_R23QAM64  MK2MCS_R34QAM64 MK2MCS_DEFAULT MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
    "chd_ch_update_enable", "Boolean(0..1)", "0", "Flag to update the cohda channel parameters from the config parameters during the application run"
    
-   
-   
-   
-   
+* For optimal RSU trace recording in topology 3, trace time interval should be set as 1:2:1 ratio. Default value is 20:40:20. Where:
+
+   * RSU device set “openxc_xcV2Xrsu_msg_send_interval = 20”
+   * Modem device set “openxc_v2x_trace_snapshot_duration = 40” and “openxc_v2x_trace_idle_duration = 20”
 
 
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%201.PNG
+Notes
+-------
 
-.. note::  1 - Not covered in this document
+1) An executable shell script like the following:
+
+   #!/bin/bash
+   egrep "transmission|ignition”
+
+   will generate a trace file such as:
+   
+   {"name":"ignition_status","value":"run","timestamp":1427334376.624450}
+   {"name":"ignition_status","value":"run","timestamp":1427334376.664466}
+   {"name":"ignition_status","value":"accessory","timestamp":1427334376.700860}
+   {"name":"transmission_gear_position","value":"neutral","timestamp":1427334376.724524}
+   {"name":"torque_at_transmission","value":10.200000,"timestamp":1427334376.734772}
+   {"name":"transmission_gear_position","value":"first","timestamp":1427334376.765584}
+   {"name":"ignition_status","value":"run","timestamp":1427334376.786151}
+   ...
+
+2) Raw vehicle trace snapshot will be saved as /mnt/data/trace_raw_<no>.json  
+   
+   */mnt/data is mounted to the first recognized formatted partition on the inserted micro SD card
+    
+3) A unique configuration template will be created at the remote server during the device registration process, e.g: <IP>:[<directory>/]<hostname>.<filename>
+
+   *To be used instead of provided <IP>:[<directory>/]<filename>, where <filename> is xconfig.conf by design
+   
+4) Uploading file will be named as <IP>:[<directory>/]<hostname>[.<timestamp>].<filename> at remote server where <filename> is trace.json by design
+5) If overwrite flag is disabled, YYMMDDhhmmss timestamp will be added to target file name.
+6) User should be aware of additional time due to trace file conversion and server connection establishment.
+7) LED brightness default is 255|128|0 for performance|normal|saving of power_saving_mode respectively
+8) Default value is based upon board type. This option is not valid for V2X as the V2X accessory does not support GPS.
+9) Default value is based upon board type. This option is not valid for V2X as the V2X does not support GSM.
+10) Default value is based upon board type. Need to be enable on both MODEM and V2X to operate V2X-Modem interface.
+
+
+Power-Saving Mode Profile
+-------
+
+To illustrate ability to support different power saving modes, OpenXC-Modem Embedded Software implements simple profiles
+(aka performance, normal and saving) for certain functions as shown in Table 9:
+
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Table%209.PNG
+
 
 
 
