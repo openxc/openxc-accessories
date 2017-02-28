@@ -101,7 +101,7 @@ A flat directory structure is used.
    :header: "File Name", "Description"
    :widths: 20, 60
 
-   "create_symlinks.sh", "Remove and replace exisiting .etc files with 
+   "create_symlinks.sh", "Remove and replace exisiting .etc files with new files"
    "wpa_supplicant_modem.conf", "Overwrite modem configuration file whenever changed"
    "wpa_supplicant_rsu.conf", "Overwrite RSU configuration file whenever changed"
    "wpa_supplicant_v2x.conf", "Overwrite V2X configuration file whenever changed"
