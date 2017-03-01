@@ -64,18 +64,7 @@ The following section describes the high level software design for the OpenXC-Mo
    "chd_radio", "(‘a’..’b’)", "a", "Radio to be used for the Cohda module"
    "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
    "chd_chan_no", "10 MHz channel (172, 174, 176, 180, 182, 184)  or 20MHz channel (175, 181). All channels are SCH", "184", "802.11p Channel"
-   "chd_modulation", "
-   
-   MK2MCS_R12BPSK, 
-   MK2MCS_R34BPSK, 
-   MK2MCS_R12QPSK, 
-   MK2MCS_R34QPSK, 
-   MK2MCS_R12QAM16, 
-   MK2MCS_R34QAM16, 
-   MK2MCS_R23QAM64,  
-   MK2MCS_R34QAM64, 
-   MK2MCS_DEFAULT, 
-   MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
+   "chd_modulation", "MK2MCS_R12BPSK | MK2MCS_R34BPSK | MK2MCS_R12QPSK | MK2MCS_R34QPSK | MK2MCS_R12QAM16 | MK2MCS_R34QAM16 | MK2MCS_R23QAM64 | MK2MCS_R34QAM64 | MK2MCS_DEFAULT | MK2MCS_TRC", "MK2MCS_R12QPSK", "Modulation scheme for cohda"
    "chd_ch_update_enable", "Boolean(0..1)", "0", "Flag to update the cohda channel parameters from the config parameters during the application run"
    
 * For optimal RSU trace recording in topology 3, trace time interval should be set as 1:2:1 ratio. Default value is 20:40:20. Where:
