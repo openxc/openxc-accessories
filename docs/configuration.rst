@@ -65,9 +65,11 @@ The following section describes the high level software design for the OpenXC-Mo
    "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
    "chd_chan_no", "
    | 10 MHz channel 
-   | (172, 174, 176, 180, 182, 184)  
-   | or 20MHz channel (175, 181). 
-   | All channels are SCH", "184", "802.11p Channel"
+   | (172, 174, 176, 
+   | 180, 182, 184)  
+   | 20MHz channel 
+   | (175, 181) All 
+   | channels SCH", "184", "802.11p Channel"
    "chd_modulation", "
    | MK2MCS_R12BPSK 
    | MK2MCS_R34BPSK 
