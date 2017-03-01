@@ -2,6 +2,26 @@
 Scripts
 =======
 
+Main Functions
+--------
+
+OpenXCSoftware main functions can be performed by invoking the appropriate scripts depending on the device (Modem, V2X or RSU) as described in this section.
+
+**Modem**: The Modem main function can be started by invoking xcmodem.py in /root/OpenXCAccessory/modem directory
+
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2014.PNG
+
+**V2X**: The V2X main function can be started by invoking xc_v2x.py in /root/OpenXCAccessory/v2x directory
+
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2015.PNG
+
+**RSU**: The RSU main function can be started by invoking xc_rsu.py in /root/OpenXCAccessory/rsu directory
+
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2016.PNG
+
+Config Scripts
+--------
+
 The Configuration scripts are used to setup the environment for the application. These scripts are stored in ~/OpenXCAccessory/startup directory.
 
 * openxc_init
