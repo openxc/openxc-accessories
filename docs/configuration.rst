@@ -63,7 +63,11 @@ The following section describes the high level software design for the OpenXC-Mo
    "chd_txpower", "", "2 dBm", "Transmit power for cohda radio" 
    "chd_radio", "(‘a’..’b’)", "a", "Radio to be used for the Cohda module"
    "chd_antenna", "(1..3)", "3", "Antenna(s) to be used for radio"
-   "chd_chan_no", "10 MHz channel (172, 174, 176, 180, 182, 184)  or 20MHz channel (175, 181). All channels are SCH", "184", "802.11p Channel"
+   "chd_chan_no", "
+   | 10 MHz channel 
+   | (172, 174, 176, 180, 182, 184)  
+   | or 20MHz channel (175, 181). 
+   | All channels are SCH", "184", "802.11p Channel"
    "chd_modulation", "
    | MK2MCS_R12BPSK 
    | MK2MCS_R34BPSK 
@@ -120,7 +124,7 @@ Notes
 
 
 Power-Saving Mode Profile
--------
+^^^^^^^^^^^^^
 
 To illustrate ability to support different power saving modes, OpenXC-Modem Embedded Software implements simple profiles
 (aka performance, normal and saving) for certain functions as shown in Table 9:
@@ -141,13 +145,83 @@ The Modem has 5 LED indicator lights. Battery LED has 2 colors (RED and GREEN) w
    :header: "LED", "Color Mode", "Function", "Keyword", "State"
    :widths: 20, 20, 20, 20, 20
    
-   "Bat_grn_led", "OFF | ON | FAST BLINK", "VBAT < 3.55V | VBAT >= 3.55V | Charging", "charger", "NOT_CHARGE/CHARGE_DONE | PRE_CHARGE/FAST_CHARGE"
-   "Bat_red_led", "OFF | ON | FAST BLINK", "VBAT > 3.65V | VBAT <= 3.65V | Charging", "charger", "NOT_CHARGE/CHARGE_DONE | PRE_CHARGE/FAST_CHARGE"
-   "GSM_led", "OFF | ON | FAST BLINK | SLOW BLINK", "IDLE or PPP lost | GSM is ready | PPP data transferring | SIM not inserted", "gsm_app", "IDLE / LOST | PENDING | OPERATION | PENDING"
-   "GPS_led*", "OFF | ON | FAST BLINK | SLOW BLINK", "Not start | GPS Unit power up | Valid GPSAPC | Locking for valid GPSAPC", "gps_app", "IDLE | CONNECT | OPERATION | LOCKING"
-   "BT_led", "OFF | ON | FAST BLINK | SLOW BLINK", "IDLE | VI Dongle Connect | VI Dongle Pairing | VI Dongle Discovery", "vi_app", "IDLE / LOST | OPERATION | DISCOVERED | ADDR_INQUIRY/ADDR_ASSIGNED/DISCOVERED"
-   "Wifi_led**", "OFF | ON | FAST BLINK | SLOW BLINK", "Not Connected | Connected | Data Transmitting | Device N/A", "na", "IDLE | PENDING | OPERATION | NO WIFI DEVICE DETECTED***"
-   "80211_led", "OFF | FAST BLINK", "Not Connected | Data Transmittin", "na", "IDLE | OPERATION"
+   "Bat_grn_led", "
+   | OFF 
+   | ON 
+   | FAST BLINK", "
+   | VBAT < 3.55V 
+   | VBAT >= 3.55V 
+   | Charging", "charger", "
+   | NOT_CHARGE/CHARGE_DONE 
+   | PRE_CHARGE/FAST_CHARGE"
+   "Bat_red_led", "
+   | OFF 
+   | ON 
+   | FAST BLINK", "
+   | VBAT > 3.65V 
+   | VBAT <= 3.65V 
+   | Charging", "charger", "
+   | NOT_CHARGE/CHARGE_DONE 
+   | PRE_CHARGE/FAST_CHARGE"
+   "GSM_led", "
+   | OFF 
+   | ON 
+   | FAST BLINK 
+   | SLOW BLINK", "
+   | IDLE or PPP lost 
+   | GSM is ready 
+   | PPP data transferring 
+   | SIM not inserted", "gsm_app", "
+   | IDLE / LOST 
+   | PENDING 
+   | OPERATION 
+   | PENDING"
+   "GPS_led*", "
+   | OFF 
+   | ON 
+   | FAST BLINK 
+   | SLOW BLINK", "
+   | Not start 
+   | GPS Unit power up 
+   | Valid GPSAPC 
+   | Locking for valid GPSAPC", "gps_app", "
+   | IDLE 
+   | CONNECT 
+   | OPERATION 
+   | LOCKING"
+   "BT_led", "
+   | OFF 
+   | ON 
+   | FAST BLINK 
+   | SLOW BLINK", "
+   | IDLE 
+   | VI Dongle Connect 
+   | VI Dongle Pairing 
+   | VI Dongle Discovery", "vi_app", "
+   | IDLE / LOST 
+   | OPERATION 
+   | DISCOVERED 
+   | ADDR_INQUIRY/ADDR_ASSIGNED/DISCOVERED"
+   "Wifi_led**", "
+   | OFF 
+   | ON 
+   | FAST BLINK 
+   | SLOW BLINK", "
+   | Not Connected 
+   | Connected 
+   | Data Transmitting 
+   | Device N/A", "na", "
+   | IDLE 
+   | PENDING 
+   | OPERATION 
+   | NO WIFI DEVICE DETECTED***"
+   "80211_led", "
+   | OFF 
+   | FAST BLINK", "
+   | Not Connected 
+   | Data Transmittin", "na", "
+   | IDLE 
+   | OPERATION"
  
 .. note:: 
     .* V2X and RSU use “gps” as “wifi” led.
@@ -158,6 +232,6 @@ The Modem has 5 LED indicator lights. Battery LED has 2 colors (RED and GREEN) w
 
 
 Brightness Control
--------
+^^^^^^^^^^^^^
 
 LED brightness is controlled by Power-saving-mode profile. However, users can overwrite the brightness level using “led_brightness” (in xcmodem.conf). The brightness level can be adjusted from 0 (dim) to 255 (bright).
