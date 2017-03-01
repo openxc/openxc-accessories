@@ -7,7 +7,7 @@ Main Functions
 
 OpenXCSoftware main functions can be performed by invoking the appropriate scripts depending on the device (Modem, V2X or RSU) as described in this section.
 
-**Modem**: The Modem main function can be started by invoking xcmodem.py in /root/OpenXCAccessory/modem directory
+**Modem**: The Modem main function can be started by invoking xc_modem.py in /root/OpenXCAccessory/modem directory
 
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2014.PNG
 
