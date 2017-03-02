@@ -2,6 +2,19 @@
 Firmware Update
 ===============
 
+Firmware Git Pull
+-------
+
+The best way to update firmware is with a git pull.
+
+1. Navigate to the /root/OpenXCAccessory directory.  
+2. Issue a ‘git pull’ command.
+
+  * Make sure the device has an Internet connection
+
+3. Files and scripts will be updated to their latest versions from https://github.com/openxc/OpenXCAccessory.
+
+
 Firmware Reset Button
 -------
 
