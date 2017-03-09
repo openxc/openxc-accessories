@@ -14,17 +14,17 @@ The devices (VI, V2X, Modem, Phone, RSU, AP and Cloud) can be configured as foll
 
 * Topology 1: VI + Modem + Phone + Cloud
 
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%202.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2021.PNG
 
 
 * Topology 2: VI + V2X + RSU + Phone + Cloud
 
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%203.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2031.PNG
 
 
 * Topology 3: VI + Modem + V2X + RSU + Phone + Cloud
 
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%204.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2041.PNG
 
 
 Application Overview
