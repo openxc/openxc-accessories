@@ -10,7 +10,7 @@ In order to successfully upgrade the kernel, you will need the following two cab
 Upgrade Procedure
 --------
 
-* Power V2X device Off.
+* Power device Off.
 * Remove top cover by unscrewing the 4 screws on bottom of device.
 * Connect micro-B side of USB-A to micro-B cable to device. 
 * Connect USB-A side of cable to PC. 
@@ -22,13 +22,13 @@ Upgrade Procedure
     
 * Connect the USB-A side of the FTDI cable to your PC and allow the FTDI driver to complete the installation.
 
-    * Driver installation will assign a COMx port.
+    * Driver installation will assign a new COMx port, in addition to the USB COM port.
     
-* Open TeraTerm and connect to the previously assigned COMx port with a 115200 baud rate.
+* Open TeraTerm and connect to the previously assigned (serial debug) COMx port with a 115200 baud rate.
 
     * Instructions for downloading TeraTerm can be found  `here <https://github.com/openxc/openxc-accessories/tree/master/tools/ModemConnect/Documents>`_.
 
-* Power V2X device On.
+* Power device On.
 * Stop “autoboot” by pressing any key on your keyboard.
 
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%20A.PNG
