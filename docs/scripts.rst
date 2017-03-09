@@ -15,7 +15,7 @@ OpenXCSoftware main functions can be performed by invoking the appropriate scrip
 
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2015.PNG
 
-**RSU**: The RSU main function can be started by invoking xc_rsu.py in /root/OpenXCAccessory/rsu directory
+**RSU**: The RSU is a subset function of the V2X accessory. The RSU main function can be started by invoking xc_rsu.py in /root/OpenXCAccessory/rsu directory
 
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Figure%2016.PNG
 
@@ -24,51 +24,40 @@ Config Scripts
 
 The Configuration scripts are used to setup the environment for the application. These scripts are stored in ~/OpenXCAccessory/startup directory.
 
-* openxc_init
+.. csv-table::
+   :header: "Script Name", "Description"
+   :widths: 20, 60
 
- * Set the config files, Set boardid file contents, set topology, set .pem files found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_.
+   "openxc_init", "Set the config files, Set boardid file contents, set topology, set .pem files found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_."
+   "openxc_load_config", "Load /restore config files found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_."
+   "openxc_save_config", "Save backup of current configuration found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_."
 
-* openxc_load_config
-
- * Load /restore config files found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_.
-
-* openxc_save_config
-
- * Save backup of current configuration found `here <https://github.com/openxc/OpenXCAccessory/tree/master/scripts>`_.
 
 Python Scripts
 --------
 
-Helpful Python scripts for converting OpenXC trace files into JSON data files optimized for browsers (and Freeboard!)
+Helpful Python scripts for converting OpenXC trace files into JSON data files optimized for browsers (and `Freeboard!<https:/openxc.freeboard.io>`_.")
 
-* /openxc_json_converter.py
+.. csv-table::
+   :header: "Script Name", "Description", "Example Usage"
+   :widths: 20, 40, 40
 
-Takes any raw trace file from the OpenXC library (examples can be downloaded from `here <http://openxcplatform.com/resources/traces.html>`_) and converts into an array of JSON data objects, which can be parsed by Freeboard datasources and widgets, and many other external APIs
-
-Example Usage:
-```Shell
-$ python openxc_json_converter.py input_trace_filename.json
-```
-
-This will output a new version of the trace file named `input_trace_filename_VALIDATED.json`
-
-* /signal_extractor.py
-
-Takes in a JSON data file (created by using /openxc_json_converter.py) and a list of signals (each prepended with '-s') that the user wishes to keep.  Outputs new JSON data file with only those signals included, named `input_trace_filename_VALIDATED_STRIPPED.json`
-
-Example Usage:
-```Shell
-$ python signal_extractor.py input_trace_filename_VALIDATED.json -s openxc_signal_name -s openxc_signal_name2 [...]
-```
-
-* /normalizer.py
-
-Strips the input JSON data file to one data point, per signal, per second.  Outputs new files named `input_trace_filename_VALIDATED_STRIPPED_NORMALIZED.json`
-
-Example Usage:
-```Shell
-$ python normalizer.py input_trace_filename_VALIDATED_STRIPPED.json
-```
+   "/openxc_json_converter.py", "Takes any raw trace file from the OpenXC library (examples can be downloaded from `here <http://openxcplatform.com/resources/traces.html>`_) and converts into an array of JSON data objects. This will output a new version of the trace file named `input_trace_filename_VALIDATED.json`, which can be parsed by Freeboard datasources and widgets, and many other external APIs", "
+   ```Shell
+   $ python openxc_json_converter.py input_trace_filename.json
+   ```
+   "
+   "/signal_extractor.py", "Takes in a JSON data file (created by using /openxc_json_converter.py) and a list of signals (each prepended with '-s') that the user wishes to keep.  Outputs new JSON data file with only those signals included, named `input_trace_filename_VALIDATED_STRIPPED.json`", "
+   ```Shell
+   $ python signal_extractor.py input_trace_filename_VALIDATED.json -s openxc_signal_name -s openxc_signal_name2 [...]
+   ```
+   "
+   "/normalizer.py", "Strips the input JSON data file to one data point, per signal, per second.  Outputs new files named `input_trace_filename_VALIDATED_STRIPPED_NORMALIZED.json`", "
+   ```Shell
+   $ python normalizer.py input_trace_filename_VALIDATED_STRIPPED.json
+   ```
+   "
+   
 
 WiFi Setup
 --------
