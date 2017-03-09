@@ -2,7 +2,7 @@
 Directory Structure
 ===================
 
-A flat directory structure is used.
+The following directory structure is used.
 
 * /root/OpenXCAccessory:
 
