@@ -131,7 +131,7 @@ Power-Saving Mode Profile
 To illustrate ability to support different power saving modes, OpenXC-Modem Embedded Software implements simple profiles
 (aka performance, normal and saving) for certain functions as shown in the following table:
 
-.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Table%209.PNG
+.. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Table%2091.PNG
 
 
 LEDs
