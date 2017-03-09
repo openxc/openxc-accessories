@@ -7,9 +7,9 @@ depends on a few other open source projects. If you are building from source, or
 have downloaded a pre-compiled binary firmware, the result may contain source
 code covered by the following licenses:
 
-`Accessories <https://github.com/openxc/opexc-accessories>`_
+`Accessories <https://github.com/openxc/openxc-accessories>`_
 
-Copyright (c) 2015 Ford Motor Company
+Copyright (c) 2017 Ford Motor Company
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
