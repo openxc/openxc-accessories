@@ -7,8 +7,7 @@ Android
 .. TODO use the Enabler Modem accessory branch until play store is merged.
 
 In order to connect with the Android device, install the *accessories* branch of 
-the Enabler in the openxc-android project. That branch is currently unavailable, but will be uploaded soon. 
-The \.apk is available `here <https://github.com/openxc/openxc-accessories/tree/master/tools/openxc-enabler-v6.0.6-modem.354.apk>`_.
+the Enabler in the openxc-android project. The enabler app that works with the accessories is available `here <https://github.com/openxc/openxc-accessories/tree/master/tools/openxc-enabler-v6.0.6-modem.354.apk>`_.
 
 ..
  In order to connect with the Android device, go to the Google Play Store to download 
@@ -22,8 +21,8 @@ password/pin code is “1234”.
 Windows
 -------
 
-The main method of configuring and setting up the modem will be through USB from the 
-Modem to a Windows PC. A program called Teraterm will be used to interface with the 
+The main method of configuring and setting up the modem or V2X device will be through USB from the 
+device to a Windows PC. A program called Teraterm will be used to interface with the 
 operating system on the device. To allow ease of use, a program called “OpenXC Modem Connect” 
 will be used to automatically configure the connection settings. 
 
