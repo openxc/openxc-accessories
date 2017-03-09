@@ -22,12 +22,13 @@ modifying or designing a new daughter card (mPCIe connector).
 
 The base board contains an Atmel SAMA5 (Cortex-A5) running embedded Linux. All
 accessory functions are coded in Python. Interfaces include SD card slot, Bluetooth 
-Classic, Bluetooth Low Energy (a.k.a Bluetooth Smart), USB OTG. WiFi is currently being
-enabled. A debug serial port is available.
+Classic, Bluetooth Low Energy (a.k.a Bluetooth Smart), USB OTG, and WiFi. A debug serial port is available.
 
 The first in the line of accessories is a 3G Modem to enable sharing of vehicle 
 data directly with the cloud, OTA updates to the Modem configuration, and still
 allows use of the Enabler app. 
+
+The second accessory is the V2X device.  The OpenXC-V2X device can act as a modem, which connects to the VI device or a phone, and shares OpenXC data via WiFi or 802.11p (in RSU mode).
 
 Table of Contents
 -----------------
