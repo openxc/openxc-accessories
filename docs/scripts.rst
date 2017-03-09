@@ -36,7 +36,7 @@ The Configuration scripts are used to setup the environment for the application.
 Python Scripts
 --------
 
-Helpful Python scripts for converting OpenXC trace files into JSON data files optimized for browsers (and `Freeboard!<https:/openxc.freeboard.io>`_.")
+Helpful Python scripts for converting OpenXC trace files into JSON data files optimized for browsers (and `Freeboard! <https:/openxc.freeboard.io>`_.")
 
 .. csv-table::
    :header: "Script Name", "Description", "Example Usage"
