@@ -150,7 +150,7 @@ Procedures:
 
   a. ```sudo mkfs.ext4 -L rootfs /dev/sdX1``` - format Partition #1 with ext4 and label “rootfs”
   b. ```sudo mkfs.vfat -F 32 -n DATALOG /dev/sdX2``` – format Partition #2 with vfat and label “DATALOG”
-  c. Note - you may need to unmount SDcard if an error occurs when trying to format “umount /dev/sdX1)
+  c. Note - you may need to unmount SDcard if an error occurs when trying to format ```umount /dev/sdX1```
 
 9. Safely Eject Micro SD from PC and install to device and power it on.
 
