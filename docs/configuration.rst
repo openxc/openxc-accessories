@@ -5,7 +5,7 @@ Configuration
 Configuration File
 -------
 
-The following section describes the high level software design for the OpenXC-Modem and V2X devices.  The picture below shows the communication links between devices.
+The following section describes the configuration file for the OpenXC Software.  
 
 * /root/OpenXCAccessory/common
 
@@ -129,7 +129,7 @@ Power-Saving Mode Profile
 ^^^^^^^^^^^^^
 
 To illustrate ability to support different power saving modes, OpenXC-Modem Embedded Software implements simple profiles
-(aka performance, normal and saving) for certain functions as shown in Table 9:
+(aka performance, normal and saving) for certain functions as shown in the following table:
 
 .. image:: https://github.com/openxc/openxc-accessories/raw/master/docs/pictures/Table%209.PNG
 
