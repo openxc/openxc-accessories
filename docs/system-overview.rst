@@ -12,9 +12,9 @@ The following section describes the high level software design for the OpenXC-Mo
 The OpenXC Embedded Software initiates connections shown in Figure 1.
 The devices (VI, V2X, Modem, Phone, RSU, AP and Cloud) can be configured as follows:
 
-* Mode 1: VI + Modem + Phone + Cloud
-* Mode 2: VI + V2X + RSU + Phone + Cloud
-* Mode 3: VI + Modem + V2X + RSU + Phone + Cloud
+* Topology 1: VI + Modem + Phone + Cloud
+* Topology 2: VI + V2X + RSU + Phone + Cloud
+* Topology 3: VI + Modem + V2X + RSU + Phone + Cloud
 
 The connections that are supported in these modes are shown below. 
 
@@ -51,7 +51,7 @@ Modem Overview
 
   * VI through Bluetooth socket
 
-*Applications
+* Applications
 
   * VI stream recording
   * GSM "Network Server Upload" task is handled in a separate stoppable thread
