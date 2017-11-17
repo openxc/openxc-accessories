@@ -1,3 +1,0 @@
-#" AT+CGDCONT=1,"IP","<APN>"
-"" ATD*99***1#
-CONNECT ""
