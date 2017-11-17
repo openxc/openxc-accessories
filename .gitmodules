@@ -1,0 +1,3 @@
+[submodule "OpenXCAccessory"]
+	path = OpenXCAccessory
+	url = https://github.com/openxc/OpenXCAccessory
